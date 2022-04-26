@@ -1,7 +1,6 @@
 import argon2 from "argon2";
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../../prisma";
-import { apiHandler } from "../api-handler";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -41,4 +40,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     .json({ message: "User created successfully", ...userInfo });
 }
 
-export default apiHandler(handler);
+export default handler;

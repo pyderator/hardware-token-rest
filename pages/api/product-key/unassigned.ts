@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../../prisma";
-import { apiHandler } from "../api-handler";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
@@ -29,4 +28,4 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default apiHandler(handler);
+export default handler;
